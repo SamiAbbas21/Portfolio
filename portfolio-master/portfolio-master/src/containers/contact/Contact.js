@@ -6,99 +6,109 @@ import location from "../../assets/location.png";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
-  const formRef = useRef();
+  const formRef = useRef(null);
   const [name, setName] = useState("");
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  // ⚙️ Clés EmailJS via variables d'environnement (à définir dans .env.local)
+  const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY  = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSending(true);
+    setError("");
 
-    emailjs
-      .sendForm(
-        "service_f8fbxir",
-        "template_gm5vadb",
-        formRef.current,
-        "user_l8s8B8JbKBef0uIaiKcFu"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setDone(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setSending(false);
+      setError(
+        "Configuration EmailJS manquante. Ajoutez vos variables dans .env.local puis relancez le serveur."
       );
-    e.target.reset();
+      return;
+    }
+
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY);
+      setDone(true);
+      e.target.reset();
+      setName("");
+    } catch (err) {
+      console.error(err);
+      setError("Oups, l’envoi a échoué. Réessayez ou contactez-moi par email.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
     <div className="portfolio__contact contact" id="contact">
       <div className="bg-contact"></div>
       <div className="portfolio__contact-container section__padding">
+        {/* Infos de contact (à gauche) */}
         <div className="portfolio__contact-container-info">
-          <h1 data-aos="fade-up">Let's discuss.</h1>
-          <div
-            className="portfolio__contact-container-info-item"
-            data-aos="fade-right"
-          >
+          <h1 data-aos="fade-up">On échange&nbsp;?</h1>
+
+          <div className="portfolio__contact-container-info-item" data-aos="fade-right">
             <img src={phone} alt="phone" />
-            <p>(+33) 06 27 13 57 23</p>
+            <p>(+33) 06 20 99 38 67</p>
           </div>
-          <div
-            className="portfolio__contact-container-info-item"
-            data-aos="fade-right"
-          >
+
+          <div className="portfolio__contact-container-info-item" data-aos="fade-right">
             <img src={email} alt="email" />
-            <p>edtoulet@gmail.com</p>
+            <p>
+              <a href="mailto:samiabbas2004@gmail.com" rel="noreferrer noopener">
+                samiabbas2004@gmail.com
+              </a>
+            </p>
           </div>
-          <div
-            className="portfolio__contact-container-info-item"
-            data-aos="fade-right"
-          >
+
+          <div className="portfolio__contact-container-info-item" data-aos="fade-right">
             <img src={location} alt="location" />
-            <p>Paris, 75017</p>
+            <p>Lyon, Auvergne-Rhône-Alpes</p>
           </div>
         </div>
+
+        {/* Formulaire (à droite) */}
         <div className="portfolio__contact-container-form">
           <p data-aos="fade-left">
-            <strong> Quelle est votre histoire ?</strong> Discutons ensemble.
-            Toujours disponible pour des beaux projets ou des opportunités
-            professionnelles.
+            <strong>Quelle est votre histoire&nbsp;?</strong> Discutons ensemble.
+            Ouvert aux opportunités d’alternance et aux projets freelance.
           </p>
+
           <form ref={formRef} onSubmit={handleSubmit}>
             <div className="form__group field" data-aos="fade-left">
               <input
-                type="input"
+                type="text"
                 className="form__field"
-                placeholder="Name"
+                placeholder="Prénom"
                 onChange={(e) => setName(e.target.value)}
                 name="user_name"
                 id="name"
                 autoComplete="off"
                 required
               />
-              <label htmlFor="name" className="form__label">
-                Prénom
-              </label>
+              <label htmlFor="name" className="form__label">Prénom</label>
             </div>
+
             <div className="form__group field" data-aos="fade-left">
               <input
-                type="input"
+                type="text"
                 className="form__field"
-                placeholder="Subject"
+                placeholder="Sujet"
                 autoComplete="off"
                 name="user_subject"
                 id="subject"
                 required
               />
-              <label htmlFor="subject" className="form__label">
-                Sujet
-              </label>
+              <label htmlFor="subject" className="form__label">Sujet</label>
             </div>
+
             <div className="form__group field" data-aos="fade-left">
               <input
-                type="input"
+                type="email"
                 className="form__field"
                 placeholder="Email"
                 name="user_email"
@@ -106,23 +116,35 @@ function Contact() {
                 id="email"
                 required
               />
-              <label htmlFor="email" className="form__label">
-                Email
-              </label>
+              <label htmlFor="email" className="form__label">Email</label>
             </div>
+
             <textarea
               rows="5"
               name="message"
               id="other_information"
+              placeholder="Votre message…"
               data-aos="fade-left"
+              required
             ></textarea>
-            <button className="button-pink" data-aos="fade-left">
-              Envoyer
+
+            <button className="button-pink" data-aos="fade-left" disabled={sending}>
+              {sending ? "Envoi…" : "Envoyer"}
             </button>
+
             {done && (
               <h2 className="contact__message" data-aos="fade-up">
-                Merci {name} ! Je te contact rapidemment.
+                Merci {name || "!"} Je vous contacte rapidement.
               </h2>
+            )}
+
+            {error && (
+              <p className="contact__error" data-aos="fade-up">
+                {error} <br />
+                <a href="mailto:samiabbas2004@gmail.com" className="underline" rel="noreferrer noopener">
+                  Envoyer un email direct
+                </a>
+              </p>
             )}
           </form>
         </div>

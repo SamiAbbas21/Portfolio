@@ -1,6 +1,7 @@
+/* Animation bounce-top */
 .bounce-top {
-	-webkit-animation: bounce-top 0.9s both;
-	        animation: bounce-top 0.9s both;
+  -webkit-animation: bounce-top 0.9s both;
+  animation: bounce-top 0.9s both;
 }
 
 /**
@@ -8,12 +9,12 @@
  * animation bounce-top
  * ----------------------------------------
  */
- @-webkit-keyframes bounce-top {
+@-webkit-keyframes bounce-top {
   0% {
     -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    transform: translateY(-45px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     opacity: 1;
   }
   24% {
@@ -21,51 +22,51 @@
   }
   40% {
     -webkit-transform: translateY(-24px);
-            transform: translateY(-24px);
+    transform: translateY(-24px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   65% {
     -webkit-transform: translateY(-12px);
-            transform: translateY(-12px);
+    transform: translateY(-12px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   82% {
     -webkit-transform: translateY(-6px);
-            transform: translateY(-6px);
+    transform: translateY(-6px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   93% {
     -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    transform: translateY(-4px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   25%,
   55%,
   75%,
   87% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     opacity: 1;
   }
 }
 @keyframes bounce-top {
   0% {
     -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    transform: translateY(-45px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     opacity: 1;
   }
   24% {
@@ -73,109 +74,96 @@
   }
   40% {
     -webkit-transform: translateY(-24px);
-            transform: translateY(-24px);
+    transform: translateY(-24px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   65% {
     -webkit-transform: translateY(-12px);
-            transform: translateY(-12px);
+    transform: translateY(-12px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   82% {
     -webkit-transform: translateY(-6px);
-            transform: translateY(-6px);
+    transform: translateY(-6px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   93% {
     -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    transform: translateY(-4px);
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   25%,
   55%,
   75%,
   87% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     opacity: 1;
   }
 }
 
-
-
-
+/* Font Awesome import */
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 
-
-.footer-social-links{
-    font-size: 14px;
+/* Container social links */
+.footer-social-links {
+  font-size: 22px; /* Taille icône */
   text-align: center;
 }
-.footer-social-links a{
-    width: 25px;
-    height: 25px;
-    line-height: 25px !important;
-    position: relative;
-    margin: 0 5px;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    display: inline-block;
-    color: #523e50;
-    
-    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
-    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+
+.footer-social-links a {
+  width: 45px;
+  height: 45px;
+  line-height: 45px !important;
+  position: relative;
+  margin: 0 8px;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  display: inline-block;
+  color: #523e50;
+  transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
+
+/* Icônes centrées */
 .footer-social-links a i,
-.footer-social-links a span{
-    position: relative;
-    top: 2px;
-    left: 1px; 
+.footer-social-links a span {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 20px; /* Ajuste taille interne */
 }
-.footer-social-links a:before{
-    content: "";
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #523e50;
-    
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    
-    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
-    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-    
+
+/* Fond de l’icône (losange ou carré stylisé) */
+.footer-social-links a:before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #523e50;
+  border-radius: 6px; /* coins arrondis pour un look moderne */
+  transform: rotate(0deg); /* carré normal (mets 45deg si tu veux en losange) */
+  transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
-.footer-social-links a:hover{
-    color: #fff;
+
+/* Hover effet */
+.footer-social-links a:hover {
+  color: #fff;
 }
-.footer-social-links a:hover:before{
-    background: #fb009f;
+.footer-social-links a:hover:before {
+  background: #fb009f;
 }
