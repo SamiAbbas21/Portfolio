@@ -1,0 +1,197 @@
+.portfolio__aboutme {
+  background-color: #ebefff;
+  box-shadow: 0px 10px 12px rgba(99, 99, 99, 0.2);
+}
+
+.portfolio__aboutme-container {
+  padding-top: 12rem;
+  padding-bottom: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.portfolio__aboutme-container-photo {
+  flex: 1;
+  align-self: center;
+}
+
+.portfolio__aboutme-container-photo img {
+  width: 450px;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: #97a0dd -5px 5px, #97a0dd -10px 10px, #97a0dd -15px 15px,
+    #97a0dd -20px 20px, #97a0dd -25px 25px;
+}
+
+.portfolio__aboutme-container-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-family: var(--font-family3);
+}
+
+.portfolio__aboutme-container-text h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #523e50;
+}
+.portfolio__aboutme-container-text h1 {
+  font-weight: bold;
+  color: #97a0dd;
+  margin-bottom: 1rem;
+  font-size: 40px;
+}
+.portfolio__aboutme-container-text p {
+  color: #523e50;
+  line-height: 25px;
+  text-align: justify;
+  margin-bottom: .7rem;
+}
+.portfolio__aboutme-container-text p:last-child {
+  margin-bottom: 0rem;
+}
+
+.portfolio__aboutme-container-text h4 {
+  color: #523e50;
+  margin-top: 2.5rem;
+}
+
+.container .highlight__aboutme {
+  display: inline-block;
+  color: #523e50;
+  transition: color 250ms, text-shadow 250ms;
+  text-decoration: none;
+  position: relative;
+  z-index: 0;
+}
+.container .highlight__aboutme::after {
+  position: absolute;
+  z-index: -1;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #523e50;
+  transition: all 250ms;
+}
+.container .highlight__aboutme:hover {
+  color: white;
+  text-shadow: 0px 1px 0px black;
+}
+.container .highlight__aboutme:hover::after {
+  height: 125%;
+  width: 105%;
+}
+
+.portfolio__aboutme-container-yapero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: center;
+}
+
+.portfolio__aboutme-container-yapero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio__aboutme-line {
+  color: #f8119a;
+  margin-bottom: 5rem;
+}
+.portfolio__aboutme-container-yapero-text h4 {
+  margin-bottom: 0.5rem;
+}
+
+.portfolio__aboutme-container-yapero-image {
+  margin-right: 1rem;
+}
+.portfolio__aboutme-container-yapero-image img {
+  width: 80px;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.portfolio__aboutme-container-yapero-text p a {
+  font-weight: bold;
+}
+
+/* ------------ Responsive ------------------ */
+
+@media screen and (min-width: 1800px) {
+  .portfolio__aboutme-container {
+    padding-top: 16rem;
+    padding-bottom: 10rem;
+  }
+  .portfolio__aboutme-line {
+    margin-bottom: 10rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .portfolio__aboutme-container-photo {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .portfolio__aboutme-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8rem;
+  }
+
+  .portfolio__aboutme-container-text p {
+    text-align: center;
+  }
+
+  .portfolio__aboutme-line {
+    display: none;
+  }
+  .portfolio__aboutme-container-text {
+    text-align: center;
+  }
+  .portfolio__aboutme-container-photo {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .portfolio__aboutme-container-photo img {
+    width: 400px;
+  }
+  .portfolio__aboutme-container-yapero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .portfolio__aboutme-container-yapero-image {
+    margin-top: 5rem;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .portfolio__aboutme-container-photo img {
+    width: 370px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .portfolio__aboutme-container-photo img {
+    width: 100%;
+    box-shadow: none;
+  }
+
+}

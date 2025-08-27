@@ -1,0 +1,99 @@
+.portfolio__minproducts {
+  width: 200px;
+  height: 125px;
+  margin: 1rem .7rem;
+  box-shadow: 10px 10px 208px -4px #c2cdff;
+  -webkit-box-shadow: 10px 10px 208px -4px #c2cdff;
+  -moz-box-shadow: 10px 10px 208px -4px #c2cdff;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  border: 0.1px solid #b7b7b7;
+  background: rgb(243, 242, 242);
+}
+
+
+
+.portfolio__product-image-min img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.portfolio__minproducts .portfolio__popup-container {
+  height: auto;
+}
+
+@media screen and (max-width: 1410px) {
+  .portfolio__minproducts {
+    width: 300px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 1170px) {
+  .portfolio__minproducts {
+    width: 250px;
+    height: 160px;
+    
+  }
+}
+@media screen and (max-width: 1130px) {
+  .portfolio__minproducts {
+    width: 200px;
+    height: 135px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .portfolio__minproducts {
+    width: 170px;
+    height: 115px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .portfolio__minproducts {
+    width: 135px;
+    height: 97px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .portfolio__minproducts {
+    width: 200px;
+    height: 134px;
+  }
+}
+@media screen and (max-width: 573px) {
+  .portfolio__minproducts {
+    width: 180px;
+    height: 124px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .portfolio__minproducts {
+    width: 200px;
+    height: 134px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .portfolio__minproducts {
+    width: 180px;
+    height: 124px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .portfolio__minproducts {
+    width: 170px;
+    height: 116px;
+  }
+}
+@media screen and (max-width: 392px) {
+  .portfolio__minproducts {
+    width: 160px;
+    height: 108px;
+  }
+}
+@media screen and (max-width: 372px) {
+  .portfolio__minproducts {
+    width: 150px;
+    height: 104px;
+  }
+}

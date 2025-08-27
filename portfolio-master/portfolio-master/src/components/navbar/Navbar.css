@@ -1,0 +1,76 @@
+.portfolio__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: 2rem 6rem;
+}
+
+.portfolio__navbar p {
+    font-family: var(--font-family3);
+    color: #523e50;
+    margin-right: 1rem;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/**
+ * ----------------------------------------
+ * Responsive
+ * ----------------------------------------
+ */
+
+@media screen and (max-width: 1000px) {
+  .portfolio__navbar {
+    justify-content: center;
+    padding: 2rem 1rem 2rem 2.5rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .portfolio__navbar {
+    padding-bottom: 0;
+    display: none;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * Animation pulsate-fwd / Github logo
+ * ----------------------------------------
+ */
+ .pulsate-fwd {
+	-webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+	        animation: pulsate-fwd 1s ease-in-out infinite both;
+}
+ @-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+
+

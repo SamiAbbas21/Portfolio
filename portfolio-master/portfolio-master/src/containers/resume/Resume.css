@@ -1,0 +1,111 @@
+.gradient__bg-resume {
+   background: white;
+    border-radius: 25px;
+    box-shadow: 10px 10px 208px -4px #c2cdff;
+    -webkit-box-shadow: 10px 10px 208px -4px #c2cdff;
+    -moz-box-shadow: 10px 10px 208px -4px #c2cdff;
+    margin-top: 10rem;
+  }
+  
+  .portfolio__resume {
+    margin-bottom: 10rem;
+  }
+  
+  .portfolio__resume-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: var(--font-family3);
+    align-items: center;
+  }
+  
+  .portfolio__resume-container-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #523e50;
+  }
+  
+  .portfolio__resume-container-title p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  
+  .portfolio__resume-container-title h2 {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  
+  .portfolio__resume-container-buttone {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* --------------------- Button --------------------- */
+  .portfolio__resume-container-button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #e8e8e8;
+    z-index: 1;
+    background: #97A0DD;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px #97A0DD;
+    box-shadow: 4px 8px 19px -3px #97A0DD;
+    transition: all 250ms;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .portfolio__resume-container-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    background-color: #e8e8e8;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px #97A0DD;
+    box-shadow: 4px 8px 19px -3px #97A0DD;
+    transition: all 250ms;
+
+  }
+  
+  .portfolio__resume-container-button:hover {
+    color: #97A0DD;
+
+
+  }
+  
+  .portfolio__resume-container-button:hover::before {
+    width: 100%;
+  }
+  
+  .portfolio__resume-container-button:active {
+    transform: scale(0.9);
+  }
+  
+  @media screen and (max-width: 1100px) {
+    /* ------------------------ Container section ------------ */
+    .portfolio__resume-container {
+      flex-direction: column;
+    }
+    .portfolio__resume-container-title {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    /* ------------------------ Container section ------------ */
+    .portfolio__resume-container {
+     padding-left: 1rem;
+     padding-right: 1rem; 
+    }
+  }
+  
+  
+  
