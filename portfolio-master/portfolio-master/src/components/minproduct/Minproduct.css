@@ -1,99 +1,66 @@
+/* Carte mini (cadre fixe) */
 .portfolio__minproducts {
   width: 200px;
-  height: 125px;
+  height: 130px;               /* ⬅ taille fixe */
   margin: 1rem .7rem;
-  box-shadow: 10px 10px 208px -4px #c2cdff;
-  -webkit-box-shadow: 10px 10px 208px -4px #c2cdff;
-  -moz-box-shadow: 10px 10px 208px -4px #c2cdff;
+  background: #f3f2f2;
+  border: 0.1px solid #b7b7b7;
   border-radius: 15px 15px 0 0;
   overflow: hidden;
-  border: 0.1px solid #b7b7b7;
-  background: rgb(243, 242, 242);
+  box-shadow: 10px 10px 208px -4px #c2cdff;
 }
 
+/* Barre navigateur mini (optionnelle) */
+.portfolio__product-browser {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+.portfolio__product-browser-circle { width: 9px; height: 9px; border-radius: 50%; }
+.portfolio__product-browser-circle.red { background:#ff5f57; }
+.portfolio__product-browser-circle.black { background:#ffbd2e; }
+.portfolio__product-browser-circle.green{ background:#28c840; }
+.circle__left { margin-left: 4px; }
 
+/* Image wrapper */
+.portfolio__product-image-min {
+  width: 100%;
+  height: calc(100% - 28px);   /* - hauteur approx. de la barre mini */
+  overflow: hidden;
+  background: #fff;
+}
 
+/* L’image rentre entièrement dans le cadre */
 .portfolio__product-image-min img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;          /* ⬅ pas de crop */
+  object-position: center;
+  display: block;
   cursor: pointer;
+
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
 }
 
-.portfolio__minproducts .portfolio__popup-container {
-  height: auto;
-}
+/* Popup ouvert depuis une mini-carte */
+.portfolio__minproducts .portfolio__popup-container { height: auto; }
 
-@media screen and (max-width: 1410px) {
-  .portfolio__minproducts {
-    width: 300px;
-    height: 180px;
-  }
-}
-@media screen and (max-width: 1170px) {
-  .portfolio__minproducts {
-    width: 250px;
-    height: 160px;
-    
-  }
-}
-@media screen and (max-width: 1130px) {
-  .portfolio__minproducts {
-    width: 200px;
-    height: 135px;
-  }
-}
-
-@media screen and (max-width: 860px) {
-  .portfolio__minproducts {
-    width: 170px;
-    height: 115px;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  .portfolio__minproducts {
-    width: 135px;
-    height: 97px;
-  }
-}
-@media screen and (max-width: 610px) {
-  .portfolio__minproducts {
-    width: 200px;
-    height: 134px;
-  }
-}
-@media screen and (max-width: 573px) {
-  .portfolio__minproducts {
-    width: 180px;
-    height: 124px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .portfolio__minproducts {
-    width: 200px;
-    height: 134px;
-  }
-}
-@media screen and (max-width: 450px) {
-  .portfolio__minproducts {
-    width: 180px;
-    height: 124px;
-  }
-}
-@media screen and (max-width: 410px) {
-  .portfolio__minproducts {
-    width: 170px;
-    height: 116px;
-  }
-}
-@media screen and (max-width: 392px) {
-  .portfolio__minproducts {
-    width: 160px;
-    height: 108px;
-  }
-}
-@media screen and (max-width: 372px) {
-  .portfolio__minproducts {
-    width: 150px;
-    height: 104px;
-  }
-}
+/* Responsive tailles carte mini (tes valeurs conservées) */
+@media screen and (max-width: 1410px) { .portfolio__minproducts { width:300px; height:180px; } }
+@media screen and (max-width: 1170px) { .portfolio__minproducts { width:250px; height:160px; } }
+@media screen and (max-width: 1130px) { .portfolio__minproducts { width:200px; height:135px; } }
+@media screen and (max-width: 860px)  { .portfolio__minproducts { width:170px; height:115px; } }
+@media screen and (max-width: 770px)  { .portfolio__minproducts { width:135px; height:97px; } }
+@media screen and (max-width: 610px)  { .portfolio__minproducts { width:200px; height:134px; } }
+@media screen and (max-width: 573px)  { .portfolio__minproducts { width:180px; height:124px; } }
+@media screen and (max-width: 550px)  { .portfolio__minproducts { width:200px; height:134px; } }
+@media screen and (max-width: 450px)  { .portfolio__minproducts { width:180px; height:124px; } }
+@media screen and (max-width: 410px)  { .portfolio__minproducts { width:170px; height:116px; } }
+@media screen and (max-width: 392px)  { .portfolio__minproducts { width:160px; height:108px; } }
+@media screen and (max-width: 372px)  { .portfolio__minproducts { width:150px; height:104px; } }

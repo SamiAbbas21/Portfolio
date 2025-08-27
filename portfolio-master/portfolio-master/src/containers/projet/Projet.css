@@ -11,10 +11,10 @@
   color: #523e50;
   text-align: center;
   margin-bottom: 6rem;
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .portfolio__projet-container-text h1 {
@@ -23,20 +23,70 @@
   margin-bottom: 1rem;
   margin-top: 4rem;
 }
+
 .portfolio__projet-container-text p {
   line-height: 25px;
   width: 75%;
   text-align: center;
-
 }
 
+/* ====== Grille des projets (grands) ====== */
 .portfolio__projet-container-projets {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
+  gap: 24px;
 }
 
+/* Carte projet (le cadre ne bouge pas) */
+.project-card {
+  width: 520px;
+  height: 300px;               /* ⬅ taille fixe de la vignette */
+  background: #f3f3f3;
+  border: 0.1px solid #b7b7b7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 10px 10px 208px -4px #c2cdff;
+}
+
+/* Barre navigateur (3 ronds) si tu l’utilises dans la carte */
+.portfolio__product-browser {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+.portfolio__product-browser-circle { width: 10px; height: 10px; border-radius: 50%; }
+.portfolio__product-browser-circle.red { background:#ff5f57; }
+.portfolio__product-browser-circle.black { background:#ffbd2e; }
+.portfolio__product-browser-circle.green{ background:#28c840; }
+.circle__left { margin-left: 4px; }
+
+/* Wrapper image à l’intérieur de la carte */
+.portfolio__product-image {
+  width: 100%;
+  height: calc(100% - 34px);   /* - hauteur approx. de la barre (ajuste si besoin) */
+  overflow: hidden;
+  background: #fff;
+}
+
+/* L’image remplit le cadre sans crop ni zoom */
+.portfolio__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* ⬅ montrer toute l’image */
+  object-position: center;
+  display: block;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+/* ====== Mini-projets ====== */
 .portfolio__projet-container-minprojets {
   width: 100%;
   display: flex;
@@ -44,9 +94,10 @@
   justify-content: space-between;
   margin-top: 2rem;
   flex-wrap: wrap;
-
+  gap: 16px;
 }
 
+/* Bloc “voir plus” */
 .portfolio__projet-container-info {
   margin-top: 1rem;
   margin-right: 3rem;
@@ -61,41 +112,18 @@
   font-weight: lighter;
   color: #523e50;
   margin-left: 0.2rem;
-
 }
-.portfolio__projet-container-info img {
-width: 25px;
-}
-
-
+.portfolio__projet-container-info img { width: 25px; }
 
 /* ----------------------------- Responsive  */
-@media screen and (max-width: 1410px) {
-  .portfolio__projet-container-minprojets {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+@media screen and (max-width: 1200px) {
+  .project-card { width: 46%; height: 280px; }
 }
-
-@media screen and (max-width: 883px) {
-  .portfolio__projet-container-minprojets {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .portfolio__projet-container-minprojets {
-    margin-top: 1rem;
-  }
+@media screen and (max-width: 900px) {
+  .project-card { width: 100%; height: 240px; }
 }
-
 @media screen and (max-width: 530px) {
-  .portfolio__projet-container {
-    margin-top: 4rem;
-  }
-  .portfolio__projet-container-text {
-    margin-bottom: 4rem;
-  }
-  .portfolio__projet-container-info {
-    margin-right: 0;
-    justify-content: center;
-  }
+  .portfolio__projet-container { margin-top: 4rem; }
+  .portfolio__projet-container-text { margin-bottom: 4rem; }
+  .portfolio__projet-container-info { margin-right: 0; justify-content: center; }
 }
