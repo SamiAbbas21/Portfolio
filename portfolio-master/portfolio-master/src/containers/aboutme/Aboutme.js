@@ -1,23 +1,22 @@
 import React from "react";
 import "./Aboutme.css";
-import edouard2 from "../../assets/edouard2.jpg";
-import yapero from "../../assets/yapero.svg";
+import samiAbout from "../../assets/photo2.jpg";
 
 function Aboutme() {
   return (
     <div className="portfolio__aboutme">
-      <div
-        className="portfolio__aboutme-container section__padding"
-        id="aboutme"
-      >
+      <div className="portfolio__aboutme-container section__padding" id="aboutme">
+        {/* Photo */}
         <div
           className="portfolio__aboutme-container-photo"
           data-aos="zoom-in-right"
           data-aos-anchor-placement="bottom-bottom"
           data-aos-duration="1000"
         >
-          <img src={edouard2} alt="Edouard Toulet portfolio" />
+          <img src={samiAbout} alt="Sami Abbas — portrait" />
         </div>
+
+        {/* Texte */}
         <div className="portfolio__aboutme-container-text">
           <div
             className="portfolio__aboutme-line"
@@ -28,51 +27,60 @@ function Aboutme() {
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           </div>
 
-          <h1 data-aos="fade-left">Mon Histoire</h1>
-          <h3 data-aos="fade-left">
-            Développeur Front-end React.js & intégrateur web
-          </h3>
+          {/* ---- Qui je suis ---- */}
+          <h1 data-aos="fade-left">À propos</h1>
+          <h4 data-aos="fade-left" style={{ marginTop: "1rem" }}>Qui je suis</h4>
           <p data-aos="fade-left">
-            Entrepreneur et développeur frontend spécialisé en Javascript ES6 et
-            React.js avec plus de 2 années d'expérience, je m'occupe de la
-            conception de vos projets web jusqu'à la mise en production.
+            Je m’appelle Sami Abbas, étudiant Franco-Libanais en Mastère Lead Designer UI/UX à Digital Campus Lyon, après avoir obtenu un BUT Informatique (spécialisation développement web full-stack).
           </p>
           <p data-aos="fade-left">
-            Passionné de développement web je suis également très sensible à
-            l' ergonomie , la fluidité et l' expérience utilisateur (UX) d'un
-            site web.
+            Passionné par le design et le code, j’aime donner vie à des interfaces élégantes et fonctionnelles où l’expérience utilisateur est au centre. 
+            En dehors de l’écran, je trouve mon équilibre dans le basket et ma passion pour l’automobile, symboles de rythme et de performance qui m’inspirent aussi dans mon travail.
+          </p>
+          {/* ---- Mes compétences clés ---- */}
+          <h4 data-aos="fade-left" style={{ marginTop: "1rem" }}>Mes compétences clés</h4>
+          <ul className="about-list" data-aos="fade-left">
+            <li><strong>Développement web :</strong> React, TypeScript, Node.js, Vue.js, Angular</li>
+            <li><strong>Design & UI/UX :</strong> création de maquettes et prototypage (Figma), intégration pixel-perfect</li>
+            <li><strong>Langages maîtrisés :</strong> C, Java, HTML, CSS, JavaScript, Python</li>
+            <li><strong>Optimisation :</strong> amélioration des performances, simplification du code, réactivité des interfaces</li>
+            <li><strong>Systèmes :</strong> installation, configuration et administration de plateformes</li>
+          </ul>
+
+          {/* ---- Expériences marquantes ---- */}
+          <h4 data-aos="fade-left" style={{ marginTop: "1rem" }}>Expériences marquantes</h4>
+          <ul className="about-list" data-aos="fade-left">
+            <li>
+              Stage chez Cousbeldi : développement d’une application web complète (React/Node/PostgreSQL) pour la gestion de restaurant, accompagné d’un cahier de passation pour assurer la continuité du projet.
+            </li>
+            <li>
+              Stage chez Waidev : expérience front-end et web design, où j’ai contribué à des interfaces modernes et soignées, tout en renforçant ma sensibilité UI/UX.
+            </li>
+            <li>
+              Stage à l’Institut de Recherche pour le Développement (IRD) : création d’un composant de visualisation de données environnementales avec Vue.js, Quasar et Apache ECharts, en collaboration avec une équipe de chercheurs.
+            </li>
+          </ul>
+          <p data-aos="fade-left">
+            Ces projets m’ont permis d’allier rigueur technique et créativité, mais aussi de travailler efficacement en équipe sur des problématiques concrètes.
+          </p>
+
+          {/* ---- Ma vision ---- */}
+          <h4 data-aos="fade-left" style={{ marginTop: "1rem" }}>Ma vision</h4>
+          <p data-aos="fade-left">
+            Toujours curieux, je cherche à progresser en explorant l’équilibre entre design et technologie.
           </p>
           <p data-aos="fade-left">
-            Actuellement en freelance, je serais très heureux de
-            discuter avec vous de vos projets ou de belles opportunités
-            professionnelles.
+            Mon objectif est de contribuer à des projets innovants en alternance ou en freelance, où je peux mettre à profit mes compétences en développement front-end et en UI/UX design.
           </p>
+
+          {/* ---- CTA ---- */}
           <div
-            className="portfolio__aboutme-container-yapero"
+            className="about-cta"
             data-aos="fade-left"
-            data-aos-anchor-placement="bottom-bottom"
+            style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "12px" }}
           >
-            <div className="portfolio__aboutme-container-yapero-image">
-              <img src={yapero} alt="yapero" className="pulsate-fwd" />
-            </div>
-            <div className="portfolio__aboutme-container-yapero-text">
-              <h4>Fondateur & developpeur Front-end Yapero.</h4>
-              <p>
-                Service de livraison d'alcool à domicile disponible depuis 2016
-                à Marseille.{" "}
-                <a href="https://yapero.com" target="_blank" rel="noreferrer noopener">
-                  Voir le site
-                </a>{" "}
-                &{" "}
-                <a
-                  href="https://apps.apple.com/fr/app/yapero-livraison-dalcool/id1366384176"
-                  target="_blank" rel="noreferrer noopener"
-                >
-                  {" "}
-                  l'application mobile.
-                </a>
-              </p>
-            </div>
+            <a href="#projet"><button>Voir mes projets</button></a>
+            <a href="#contact"><button>Me contacter</button></a>
           </div>
         </div>
       </div>

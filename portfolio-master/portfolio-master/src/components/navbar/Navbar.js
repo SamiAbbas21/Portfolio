@@ -8,7 +8,16 @@ function Navbar() {
       data-aos="fade-left"
       data-aos-duration="1300"
     >
-      <p><strong>Call me. (+33) 06 27 13 57 23</strong></p>
+      <p>
+        <strong> (+33) 06 20 99 38 67 </strong> |{" "}
+        <a
+          href="mailto:samiabbas2004@gmail.com"
+          className="navbar-email"
+          rel="noreferrer noopener"
+        >
+           samiabbas2004@gmail.com
+        </a>
+      </p>
     </div>
   );
 }
