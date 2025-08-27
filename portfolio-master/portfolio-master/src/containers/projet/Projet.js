@@ -30,21 +30,21 @@ import imgMobileAppcut from "../../assets/projet-mobileappcut.jpg";
 const products = [
   {
     id: 1,
-    name: "ERP Universitaire - RAmses",
+    name: "RAmses — ERP Universitaire",
     img: imgRAmses,
     imgcut: imgRAmsescut,
     link: "https://github.com/SamiAbbas21/RAmses",
     description:
-      "Projet ERP universitaire en Angular pour le front-end et Nest.js pour le back-end : gestion des entités clés (utilisateurs, ressources, flux), logique métier et organisation modulaire du code.",
+      "Développement d’un ERP universitaire complet avec Angular (front-end) et Nest.js (back-end). Conception de modules pour la gestion des utilisateurs, des ressources pédagogiques et des flux académiques. Mise en place d’une architecture modulaire et maintenable, intégrant à la fois logique métier et bonnes pratiques de collaboration en équipe.",
   },
   {
     id: 2,
-    name: "ERP Universitaire - IUT Lyon 1",
+    name: "ERP Universitaire — IUT Lyon 1",
     img: imgERP,
     imgcut: imgERPcut,
     link: "https://github.com/SamiAbbas21/ERP",
     description:
-      "Travail de groupe (ERP pour l’IUT Lyon 1). Architecture Angular pour le front-end et springboot pour le back-end, composants réutilisables et pratiques de collaboration (issues/branches).",
+      "Développement collaboratif d’un ERP universitaire pour l’IUT Lyon 1. Front-end en Angular et back-end en Spring Boot, avec une architecture modulaire, des composants réutilisables et une gestion de projet basée sur GitHub (issues, branches et merges).",
   },
   {
     id: 3,
@@ -53,67 +53,66 @@ const products = [
     imgcut: imgUnifreecut,
     link: "https://github.com/SamiAbbas21/Unifree",
     description:
-      "Site e-learning React pour le front et nodejs pour le back : pages publiques, organisation des contenus pédagogiques et base pour un parcours utilisateur.",
+      "Développement d’une plateforme e-learning avec React (front-end) et Node.js (back-end). Mise en place des pages publiques, structuration des contenus pédagogiques et conception d’un parcours utilisateur fluide et évolutif.",
   },
   {
     id: 4,
-    name: "Cousbeldi - Front-end",
+    name: "Cousbeldi — Application web complète pour restaurant",
     img: imgCousbeldi,
     imgcut: imgCousbeldicut,
     link: "https://github.com/cousbeldi/Cousbeldi-Client",
     description:
-      "site"  
+      "Développement d’une application web complète pour le restaurant Cousbeldi. • Front-end : React + TypeScript avec un design system cohérent et des composants réutilisables pour gérer le menu, les commandes et le suivi client. • Back-end : Node.js + PostgreSQL (API REST disponible ici : https://github.com/cousbeldi/Cousbeldi-api), assurant la gestion des données et l’intégration avec les fonctionnalités métiers. Projet mené dans un cadre professionnel avec mise en place d’un cahier de passation."
   },
   {
     id: 5,
-    name: "Waidev",
+    name: "Waidev — Site vitrine professionnel",
     img: imgWaidev,
     imgcut: imgWaidevcut,
-    link: "https://github.com/xegulon/waidev-website",
+    link: "https://waidev.fr",
     description:
-      "Site",
+      "Développement front-end et intégration UI/UX du site vitrine de Waidev. Interfaces modernes, responsive design et optimisation des composants pour une expérience utilisateur fluide. 🔗 Code source disponible sur GitHub : https://github.com/xegulon/waidev-website"
   },
   {
     id: 6,
-    name: "IRD",
+    name: "Institut de Recherche pour le Développement (IRD) — Theia Ozcar",
     img: imgIrd,
     imgcut: imgIrdcut,
-    link: "#",
+    link: "https://www.ird.fr",
     description:
-      "Site",
-  },
+      "Conception et intégration d’un composant de visualisation de données environnementales pour la plateforme Theia Ozcar. Développé avec Vue.js, Quasar et Apache ECharts, ce module interactif permet aux chercheurs de comparer et analyser efficacement des séries temporelles."
+  }
 ];
 
 // ===== Mini-projets (6) =====
 const minProducts = [
   {
     id: 1,
-    name: "LS-santer — Java",
+    name: "LS-Santer — Application Java",
     img: thumbLSsanter,
     imgcut: thumbLSsantercut,
     link: "https://github.com/SamiAbbas21/LS-santer",
     description:
-      "Projet Java pour hôpitaux (algo d’aide) : structures de données, logique métier et tests.",
+      "Application Java orientée santé, développée pour la gestion d’hôpitaux. Mise en place d’algorithmes d’aide à la décision, utilisation avancée des structures de données et réalisation de tests unitaires pour garantir fiabilité et performance.",
   },
   {
     id: 2,
-    name: "C_project — C",
+    name: "Projet en C — Gestion mémoire & structures",
     img: thumbC,
     imgcut: thumbCcut,
     link: "https://github.com/SamiAbbas21/C_project",
     description:
-      "Petit projet en C : gestion mémoire, fonctions utilitaires et compilation multi-fichiers.",
+      "Développement d’un projet académique en langage C mettant en œuvre la gestion mémoire, la manipulation de structures de données et la compilation multi-fichiers. Ce projet m’a permis de renforcer ma maîtrise des fondamentaux bas-niveau et des bonnes pratiques de programmation en C."
   },
   {
     id: 3,
-    name: "Mobile App — Kotlin",
+    name: "Application mobile — Bien-être alimentaire (Kotlin)",
     img: imgMobileApp,
     imgcut: imgMobileAppcut,
     link: "https://github.com/SamiAbbas21/mobile_app",
     description:
-      "Application Android (Kotlin) orientée bien-être alimentaire : navigation, vues, gestion d’état et composants natifs.",
+      "Développement d’une application Android en Kotlin dédiée au suivi et à l’amélioration du bien-être alimentaire. Mise en place d’une navigation fluide entre les vues, gestion d’état, et intégration de composants natifs pour offrir une expérience utilisateur claire et intuitive.",
   },
-
 ];
 
 function Projet() {
