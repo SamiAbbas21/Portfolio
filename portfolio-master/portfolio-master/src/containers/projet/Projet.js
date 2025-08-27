@@ -1,153 +1,140 @@
 import React from "react";
 import "./Projet.css";
-import { Product } from "../../components";
-import { Minproduct } from "../../components";
+import { Product, Minproduct } from "../../components";
+
+// 👉 Image "plus"
 import plus from "../../assets/plus.png";
 
+// 👉 Mets tes visuels dans /src/assets et adapte les noms ci-dessous
+import imgERP from "../../assets/projet-erp.jpg";
+import imgERPcut from "../../assets/projet-erpcut.jpg";
+import imgRAmses from "../../assets/projet-ramses.jpg";
+import imgRAmsescut from "../../assets/projet-ramsescut.jpg";
+import imgUnifree from "../../assets/projet-unifree.jpg";
+import imgUnifreecut from "../../assets/projet-unifreecut.jpg";
+import imgCousbeldi from "../../assets/imgCousbeldi.jpg";
+import imgCousbeldicut from "../../assets/imgCousbeldicut.jpg";
+import imgWaidev from "../../assets/imgWaidev.jpg";
+import imgWaidevcut from "../../assets/imgWaidevcut.jpg";
+import imgIrd from "../../assets/imgIrd.jpg";
+import imgIrdcut from "../../assets/imgIrdcut.jpg";
+
+import thumbLSsanter from "../../assets/thumb-lssanter.jpg";
+import thumbLSsantercut from "../../assets/thumb-lssanter.jpg";
+import thumbC from "../../assets/thumb-cproject.jpg";
+import thumbCcut from "../../assets/thumb-cproject.jpg";
+import imgMobileApp from "../../assets/projet-mobileapp.jpg";
+import imgMobileAppcut from "../../assets/projet-mobileappcut.jpg";
+
+// ===== Projets principaux (6) =====
 const products = [
   {
     id: 1,
-    name: "Hook a Lip",
-    img: "./hookalip.jpg",
-    imgcut: "./hookalipcut.jpg",
-    link: "https://hook-a-lip.com/",
+    name: "ERP Universitaire - RAmses",
+    img: imgRAmses,
+    imgcut: imgRAmsescut,
+    link: "https://github.com/SamiAbbas21/RAmses",
     description:
-      "Création from scratch de la maquette UX/UI et du site web pour un client en freelance. ",
+      "Projet ERP universitaire en Angular pour le front-end et Nest.js pour le back-end : gestion des entités clés (utilisateurs, ressources, flux), logique métier et organisation modulaire du code.",
   },
   {
     id: 2,
-    name: "Yapero",
-    img: "./yapero.jpg",
-    imgcut: "./yaperocut.jpg",
-    link: "https://yapero.com/",
+    name: "ERP Universitaire - IUT Lyon 1",
+    img: imgERP,
+    imgcut: imgERPcut,
+    link: "https://github.com/SamiAbbas21/ERP",
     description:
-      "Yapero est une plateforme de livraison de vins, bières et spiritueux livrés en 30 minutes et à température de dégustation aux utilisateurs. J’ai réalisé l’UI/UX Design du site internet, son développement Front ainsi que sa maintenance en collaboration avec un dev full stack.",
+      "Travail de groupe (ERP pour l’IUT Lyon 1). Architecture Angular pour le front-end et springboot pour le back-end, composants réutilisables et pratiques de collaboration (issues/branches).",
   },
   {
     id: 3,
-    name: "NFT",
-    img: "./nft.jpg",
-    imgcut: "./nftcut.jpg",
-    link: "https://nft-app-d1bf6.web.app/",
-    description: `J’ai utilisé Thirdweb pour gérer ce projet web 3.0 et créer le Back-end nécessaire à une application Ethereum, basée sur la blockchain. Ce projet exploite des NFT (au préalable "mintés" dans une collection Thirdweb) connectés à OpenSea.`,
+    name: "Unifree — E-learning web site",
+    img: imgUnifree,
+    imgcut: imgUnifreecut,
+    link: "https://github.com/SamiAbbas21/Unifree",
+    description:
+      "Site e-learning React pour le front et nodejs pour le back : pages publiques, organisation des contenus pédagogiques et base pour un parcours utilisateur.",
   },
   {
     id: 4,
-    name: "Amazon",
-    img: "./amazon.jpg",
-    imgcut: "./amazoncut.jpg",
-    link: "https://clone-e655c.web.app/",
+    name: "Cousbeldi - Front-end",
+    img: imgCousbeldi,
+    imgcut: imgCousbeldicut,
+    link: "https://github.com/cousbeldi/Cousbeldi-Client",
     description:
-      "J'ai ici reproduit le site Amazon en Reactjs et hébergé sur Firebase. L'application intègre toutes les principales fonctionnalités E-commerce (un système de compte et de login utilisant Firebase Authentification / des pages produit / un panier et une vérification / un système complet de payement utilisant Stripe / un historique des commandes en temps réel grâce à Firestore Database).",
-  },
-];
-
-const minProducts = [
-  {
-    id: 1,
-    name: "Headphones",
-    img: "./headphones.jpg",
-    imgcut: "./headphones.jpg",
-    link: "https://headphones-3e8d.vercel.app/",
-    description:
-      "Création d'un site de vente d'écouteurs incluant les principales features e-commerce à savoir l'ajout, la modification de quantité et la suppression de produit dans le panier avec la fonctionnalité de payement (Stripe). J'ai utilisé Sanity pour gérer les produits et les manipuler dans un dahsboard organisé.",
-  },
-  {
-    id: 2,
-    name: "FitnessClub",
-    img: "./fitness.jpg",
-    imgcut: "./fitness.jpg",
-    link: "https://fitnessclub-b39f2.web.app/",
-    description:
-      "Création d'une application d'exercices de sport utilisant l'API ExerciseDB.",
-  },
-  {
-    id: 3,
-    name: "Share",
-    img: "./share.jpg",
-    imgcut: "./share.jpg",
-    link: "https://shareme-edouard.netlify.app/",
-    description:
-      "Création d'un reseau social où l'on peut s'authentifier et poster des images partagées avec les autres utilisateurs. J'ai ici utilisé Sanity pour le backend et reactjs pour le frontend.",
-  },
-  {
-    id: 4,
-    name: "Spotify",
-    img: "./spotify.jpg",
-    imgcut: "./spotify.jpg",
-    description:
-      "Reproduction de la page d'accueil de Spotify en React en y implémentant mes propres données de l'application grâce à L'API fournit par Spotify.",
+      "site"  
   },
   {
     id: 5,
-    name: "Movie DB",
-    img: "./moviedb.jpg",
-    imgcut: "./moviedb.jpg",
-    link: "https://moviedb-b586e.web.app/",
+    name: "Waidev",
+    img: imgWaidev,
+    imgcut: imgWaidevcut,
+    link: "https://github.com/xegulon/waidev-website",
     description:
-      "Une app React utilisant l'API TMBD. Je souhaitais pouvoir accéder rapidement à n'importe quel film dans l'objectif de trouver la plateforme où le regarder (Netflix, Canal +, Disney ...), synopsis, note avec possibilité d'enregistrer une sélection dans le localStorage et d'y accéder.",
+      "Site",
   },
   {
     id: 6,
-    name: "Tinder",
-    img: "./tinder.jpg",
-    imgcut: "./tindercut.jpg",
+    name: "IRD",
+    img: imgIrd,
+    imgcut: imgIrdcut,
+    link: "#",
     description:
-      "Reproduction de Tinder en utilisant la stack M.E.R.N (MongoDB, Express, React, NodeJS). Afin d'arriver à un résultat similaire, j'ai intégré une dépendance React (react-tinder-card) simulant le `swipe` de Tinder qui me permet de connaître la direction du balayage et donc d'un `oui` ou d'un `non`.",
+      "Site",
+  },
+];
+
+// ===== Mini-projets (6) =====
+const minProducts = [
+  {
+    id: 1,
+    name: "LS-santer — Java",
+    img: thumbLSsanter,
+    imgcut: thumbLSsantercut,
+    link: "https://github.com/SamiAbbas21/LS-santer",
+    description:
+      "Projet Java pour hôpitaux (algo d’aide) : structures de données, logique métier et tests.",
   },
   {
-    id: 7,
-    name: "GPT-3",
-    img: "./hook.jpg",
-    imgcut: "./hookcut.jpg",
-    link: "https://hook-23a60.web.app/",
+    id: 2,
+    name: "C_project — C",
+    img: thumbC,
+    imgcut: thumbCcut,
+    link: "https://github.com/SamiAbbas21/C_project",
     description:
-      "J'ai d'abord crée la maquette (AdobeXd) et ensuite développé le site en React.js",
+      "Petit projet en C : gestion mémoire, fonctions utilitaires et compilation multi-fichiers.",
   },
   {
-    id: 8,
-    name: "To Do App",
-    img: "./todoapp.jpg",
-    imgcut: "./todoapp.jpg",
-    link: "https://todo-app-908e1.web.app/",
+    id: 3,
+    name: "Mobile App — Kotlin",
+    img: imgMobileApp,
+    imgcut: imgMobileAppcut,
+    link: "https://github.com/SamiAbbas21/mobile_app",
     description:
-      "Une To Do List app en Reactjs intégrant toutes les fonctionnalités d'un CRUD (Create Read Update Delete). J'ai hébérgé l'application sur Firebase et la base de donnée en temps réel sur Firestore.",
+      "Application Android (Kotlin) orientée bien-être alimentaire : navigation, vues, gestion d’état et composants natifs.",
   },
-  {
-    id: 9,
-    name: "Mario",
-    img: "./mario.jpg",
-    imgcut: "./mario.jpg",
-    description:
-      "3 niveaux inspirés du célèbre jeu vidéo Mario. L'application est développé en Javascript et utilise une librairie (Kaboom.js). Ici, nous avons la possibilité, grâce aux touches du clavier, de se déplacer et de sauter les obstacles dans l'objectif d'arriver au drapeau.",
-  },
-  {
-    id: 10,
-    name: "Chat",
-    img: "./chat.jpg",
-    imgcut: "./chat.jpg",
-    description:
-      "Création d'une messagerie instantanée fonctionnelle, avec création de compte et authentification d'utilisateur. L'application permet donc de communiquer avec d'autres utilisateurs s'étant enregistrés. Les utilisateurs et les conversations sont stockés sur firestore et l'authentification est géré par firebase auth.",
-  },
+
 ];
 
 function Projet() {
   return (
     <div className="portfolio__projet section__margin" id="projet">
       <div className="portfolio__projet-container">
+        {/* Intro */}
         <div
           className="portfolio__projet-container-text"
           data-aos="fade-down"
           data-aos-anchor-placement="center-bottom"
           data-aos-duration="800"
         >
-          <h1>Create & Inspire. It's Edmarsht</h1>
+          <h1>Créer & Inspirer — Projets de Sami Abbas</h1>
           <p>
-            Découvrez une sélection de quelques-uns de mes projets préférés qui
-            sont soit des réalisations professionnelles, personnelles ou bien
-            des reproductions fonctionnelles de site web connus.
+            Sélection de projets (universitaires & persos) mêlant développement front-end,
+            UI/UX et back-end. Cliquez pour les détails et les dépôts GitHub.
           </p>
         </div>
+
+        {/* Projets principaux */}
         <div className="portfolio__projet-container-projets">
           {products.map((item) => (
             <Product
@@ -160,8 +147,9 @@ function Projet() {
             />
           ))}
         </div>
+
+        {/* Mini-projets */}
         <div className="portfolio__projet-container-minprojets">
-          {" "}
           {minProducts.map((item) => (
             <Minproduct
               key={item.id}
@@ -173,20 +161,22 @@ function Projet() {
             />
           ))}
         </div>
+
+        {/* Lien vers tous les repos */}
         <div className="portfolio__projet-container-info" data-aos="fade-left">
           <img
             src={plus}
             loading="eager"
-            alt="plus de projets Edouard Toulet"
+            alt="Plus de projets — Sami Abbas"
             className="pulsate-fwd"
           />
           <h4>
             <a
-              href="https://github.com/edmarsht?tab=repositories"
-              target="_blank" rel="noreferrer noopener"
+              href="https://github.com/SamiAbbas21?tab=repositories"
+              target="_blank"
+              rel="noreferrer noopener"
             >
-              {" "}
-              Découvrir d'autres projets sur Github.
+              Voir tous mes dépôts GitHub
             </a>
           </h4>
         </div>
